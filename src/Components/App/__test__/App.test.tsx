@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import App from "./../App";
-import Pomodoro from "../../Pomodoro/Pomodoro";
 
 it("renders App", () => {
   const { container } = render(<App />);

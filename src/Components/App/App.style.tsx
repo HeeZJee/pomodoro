@@ -6,4 +6,5 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(45deg, cyan, magenta);
 `;
