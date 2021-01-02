@@ -11,6 +11,6 @@ export const Wrapper = styled.div`
     45deg,
     rgb(0, 255, 50) 0%,
     rgb(0, 253, 255) 50%,
-    rgb(255, 0, 255) 100%
+    rgb(200, 0, 255) 100%
   );
 `;
