@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot App 1`] = `
+<div
+  class="sc-bdfBwQ gnMeFq"
+  data-testid="App"
+>
+  <div>
+    Pomodoro
+  </div>
+</div>
+`;
