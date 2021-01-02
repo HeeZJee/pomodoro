@@ -6,5 +6,11 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(45deg, cyan, magenta);
+  background: rgb(0, 255, 158);
+  background: linear-gradient(
+    45deg,
+    rgb(0, 255, 50) 0%,
+    rgb(0, 253, 255) 50%,
+    rgb(255, 0, 255) 100%
+  );
 `;
