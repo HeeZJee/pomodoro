@@ -5,6 +5,14 @@ exports[`snapshot Pomodoro 1`] = `
   class="sc-bdfBwQ eVglnJ"
   data-testid="pomodoro"
 >
-  Pomodoro
+  <div>
+    <span>
+      25
+    </span>
+    :
+    <span>
+      0
+    </span>
+  </div>
 </div>
 `;

@@ -2,14 +2,22 @@
 
 exports[`snapshot App 1`] = `
 <div
-  class="sc-gsTCUz ditheC"
+  class="sc-gsTCUz jDrhhX"
   data-testid="App"
 >
   <div
     class="sc-bdfBwQ eVglnJ"
     data-testid="pomodoro"
   >
-    Pomodoro
+    <div>
+      <span>
+        25
+      </span>
+      :
+      <span>
+        0
+      </span>
+    </div>
   </div>
 </div>
 `;

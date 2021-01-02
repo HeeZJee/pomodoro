@@ -8,7 +8,14 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
 
-  @media screen and (max-width: 510px) {
+  @media screen and (max-width: 960px) {
     width: 70vh;
+  }
+
+  @media screen and (max-width: 510px) {
+    width: 60vh;
+  }
+  @media screen and (max-width: 400px) {
+    width: 50vh;
   }
 `;

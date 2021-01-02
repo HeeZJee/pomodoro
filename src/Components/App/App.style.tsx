@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   background: rgb(0, 255, 158);
   background: linear-gradient(
     45deg,
-    rgb(0, 255, 50) 0%,
-    rgb(0, 253, 255) 50%,
-    rgb(200, 0, 255) 100%
+    rgb(0, 255, 150) 0%,
+    rgb(0, 255, 255) 50%,
+    rgb(150, 0, 255) 100%
   );
 `;
