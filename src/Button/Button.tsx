@@ -1,18 +1,26 @@
 import React, { ReactElement } from "react";
-import { StyledButton, StyledIcon } from "./Button.style";
+import { StyledButton, StyledIcon, StyledIconButton } from "./Button.style";
 
 interface iProps {
   title: string;
-  text: string;
-  icon?: ReactElement;
+  icon: ReactElement;
+  text?: string;
+  active?: boolean;
 }
 
-function Button({ title, text, icon }: iProps): ReactElement {
+function Button({ title, text, icon, active }: iProps): ReactElement {
+  if (text) {
+    return (
+      <StyledButton title={title}>
+        <StyledIcon>{icon}</StyledIcon>
+        <span>{text}</span>
+      </StyledButton>
+    );
+  }
   return (
-    <StyledButton title={title}>
-      <StyledIcon>{icon}</StyledIcon>
-      {text}
-    </StyledButton>
+    <StyledIconButton title={title} active={active}>
+      {icon}
+    </StyledIconButton>
   );
 }
 
