@@ -30,20 +30,16 @@ const Pomodoro = () => {
           title="Play music"
           icon={<FaMusic color="rgb(106, 89, 157)" size={18} />}
           active={playMusic}
-        ></Button>
+        />
         {!isOn ? (
-          <Button
-            title="Start pomodoro"
-            text="Start"
-            icon={<FaPlay />}
-          ></Button>
+          <Button title="Start pomodoro" text="Start" icon={<FaPlay />} />
         ) : (
-          <Button title="Stop pomodoro" text="Stop" icon={<FaStop />}></Button>
+          <Button title="Stop pomodoro" text="Stop" icon={<FaStop />} />
         )}
         <Button
           title="Reset pomodoro"
           icon={<FaRedoAlt color="rgb(106, 89, 157)" size={18} />}
-        ></Button>
+        />
       </ButtonsWrapper>
     </Wrapper>
   );
