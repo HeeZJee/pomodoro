@@ -1,6 +1,8 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import Pomodoro from "./../Pomodoro";
+
+afterEach(cleanup);
 
 it("renders Pomodoro", () => {
   const { container } = render(<Pomodoro />);

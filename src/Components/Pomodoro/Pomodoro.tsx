@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Button from "../../Button/Button";
 import Timer from "../TImer/Timer";
-import { Wrapper } from "./Pomodoro.style";
+import { ButtonsWrapper, Wrapper } from "./Pomodoro.style";
+import { FaPlay, FaStop } from "react-icons/fa";
 
 interface iState {
   minute: number;
@@ -21,6 +23,13 @@ const Pomodoro = () => {
   return (
     <Wrapper data-testid="pomodoro">
       <Timer minute={minute} second={second} />
+      <ButtonsWrapper>
+        {!isOn ? (
+          <Button title="Start" text="Start" icon={<FaPlay />}></Button>
+        ) : (
+          <Button title="Stop" text="Stop" icon={<FaStop />}></Button>
+        )}
+      </ButtonsWrapper>
     </Wrapper>
   );
 };
