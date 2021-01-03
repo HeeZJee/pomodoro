@@ -25,7 +25,7 @@ const Pomodoro = () => {
   return (
     <Wrapper data-testid="pomodoro">
       <Timer minute={minute} second={second} />
-      <ButtonsWrapper>
+      <ButtonsWrapper data-testid="buttons">
         <Button
           title="Play music"
           icon={<FaMusic color="rgb(106, 89, 157)" size={18} />}

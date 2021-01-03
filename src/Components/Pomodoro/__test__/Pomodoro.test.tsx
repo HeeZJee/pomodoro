@@ -13,3 +13,15 @@ it("snapshot Pomodoro", () => {
   const { getByTestId } = render(<Pomodoro />);
   expect(getByTestId("pomodoro")).toMatchSnapshot();
 });
+
+it("should render Timer and ButtonWrapper", () => {
+  const { getByTestId } = render(<Pomodoro />);
+
+  expect(getByTestId("pomodoro").childElementCount).toBe(2);
+});
+
+it("should render buttons", () => {
+  const { getByTestId } = render(<Pomodoro />);
+
+  expect(getByTestId("buttons").childElementCount).toBe(3);
+});

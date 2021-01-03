@@ -68,6 +68,7 @@ exports[`snapshot Pomodoro 1`] = `
   </div>
   <div
     class="sc-jSgupP flLuNI"
+    data-testid="buttons"
   >
     <button
       class="sc-dlfnbm gcAlKd"
