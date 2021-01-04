@@ -16,7 +16,7 @@ const initialState = {
   minute: 25,
   second: 0,
   isOn: false,
-  counter: 0,
+  counter: 1500,
   playMusic: false,
 };
 
@@ -41,7 +41,7 @@ const Pomodoro = () => {
   const resetTimer = () => {
     console.log("reset");
     stopTimer();
-    setState((prev) => ({ ...prev, minute: 25, second: 0, counter: 0 }));
+    setState((prev) => ({ ...prev, minute: 25, second: 0, counter: 1500 }));
   };
 
   const musicHandler = () => {};
@@ -59,7 +59,7 @@ const Pomodoro = () => {
     } else if (second === 0 && minute > 0) {
       console.log("min dec ");
       minute--;
-      counter++;
+      counter--;
       second = 59;
       setState((prev) => ({
         ...prev,
@@ -70,7 +70,7 @@ const Pomodoro = () => {
     } else if (second > 0) {
       console.log("sec dec");
       second--;
-      counter++;
+      counter--;
       setState((prev) => ({
         ...prev,
         second,

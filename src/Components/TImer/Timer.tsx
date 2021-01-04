@@ -14,10 +14,12 @@ const Timer = ({ minute, second, counter }: iProps) => {
   return (
     <Wrapper data-testid="timer">
       <CircularProgressbarWithChildren
-        value={counter}
         minValue={0}
-        maxValue={600}
+        value={counter}
+        maxValue={1500}
         styles={buildStyles({
+          pathTransition: "all",
+          pathTransitionDuration: 1,
           strokeLinecap: "round",
           pathColor: `rgba(106, 89, 157, 1)`,
           trailColor: "rgba(106, 89, 157, 0.4)",
