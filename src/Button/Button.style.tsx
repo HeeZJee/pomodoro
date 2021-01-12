@@ -41,9 +41,7 @@ export const StyledIconButton = styled.button<iIconProps>`
   background-color: ${({ active }) => active && `rgba(106, 89, 157, 0.5)`};
 
   :hover {
-    background-color: rgba(106, 89, 157, 0.2);
-  }
-  :active {
-    background-color: rgba(106, 89, 157, 0.5);
+    background-color: ${({ active }) =>
+      active ? `rgba(106, 89, 157, 0.5)` : `rgba(106, 89, 157, 0.2)`};
   }
 `;

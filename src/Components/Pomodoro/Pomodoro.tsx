@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../../Button/Button";
 import Timer from "../TImer/Timer";
 import { ButtonsWrapper, Wrapper } from "./Pomodoro.style";
 import { FaPlay, FaStop, FaRedoAlt, FaMusic } from "react-icons/fa";
+import useAudio from "../../Custom Hook/useAudio";
 
 interface iState {
   minute: number;
   second: number;
   counter: number;
   isOn: boolean;
-  playMusic: boolean;
 }
 
 const initialState = {
@@ -17,13 +17,15 @@ const initialState = {
   second: 0,
   isOn: false,
   counter: 1500,
-  playMusic: false,
 };
 
 const Pomodoro = () => {
   const [state, setState] = useState<iState>(initialState);
   const [timerInterval, setTimerInterval] = useState<any>();
-  const { isOn, playMusic } = state;
+  const { isOn } = state;
+  const [playing, toggle] = useAudio(
+    "http://www.noiseaddicts.com/samples_1w72b820/2558.mp3"
+  );
 
   const startTimer = () => {
     setState((prev) => ({ ...prev, isOn: true }));
@@ -44,17 +46,15 @@ const Pomodoro = () => {
     setState((prev) => ({ ...prev, minute: 25, second: 0, counter: 1500 }));
   };
 
-  const musicHandler = () => {};
-
   let { minute, second, counter } = state;
+
+  console.log("song", playing);
 
   const run = () => {
     console.log("run");
     if (minute === 0 && second === 0) {
       console.log("0 min, 0 sec");
       resetTimer();
-      // clearInterval(timerInterval);
-      // setState((prev) => ({ ...prev, minute: 25, second: 0 }));
       return;
     } else if (second === 0 && minute > 0) {
       console.log("min dec ");
@@ -77,23 +77,7 @@ const Pomodoro = () => {
         counter,
       }));
     }
-
-    // if (newSec > 0) {
-    //   newSec--;
-    // }
-    // if (newSec === 0) {
-    //   if (newMin === 0) {
-    //     resetTimer();
-    //     return;
-    //   } else {
-    //     newMin--;
-    //     newSec = 59;
-    //   }
-    // }
-    // setState((p) => ({ ...p, minute, second }));
   };
-
-  console.log(state.minute, state.second, state.counter);
 
   return (
     <Wrapper data-testid="pomodoro">
@@ -102,7 +86,8 @@ const Pomodoro = () => {
         <Button
           title="Play music"
           icon={<FaMusic color="rgb(106, 89, 157)" size={18} />}
-          active={playMusic}
+          active={playing}
+          callback={toggle}
         />
         {!isOn ? (
           <Button
