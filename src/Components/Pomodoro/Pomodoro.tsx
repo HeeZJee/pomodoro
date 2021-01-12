@@ -24,7 +24,7 @@ const Pomodoro = () => {
   const [timerInterval, setTimerInterval] = useState<any>();
   const { isOn } = state;
   const [playing, toggle] = useAudio(
-    "http://www.noiseaddicts.com/samples_1w72b820/2558.mp3"
+    "http://www.noiseaddicts.com/samples_1w72b820/1450.mp3"
   );
 
   const startTimer = () => {
@@ -35,29 +35,22 @@ const Pomodoro = () => {
   };
 
   const stopTimer = () => {
-    console.log("stop");
     clearInterval(timerInterval);
     setState((prev) => ({ ...prev, isOn: false }));
   };
 
   const resetTimer = () => {
-    console.log("reset");
     stopTimer();
     setState((prev) => ({ ...prev, minute: 25, second: 0, counter: 1500 }));
   };
 
   let { minute, second, counter } = state;
 
-  console.log("song", playing);
-
   const run = () => {
-    console.log("run");
     if (minute === 0 && second === 0) {
-      console.log("0 min, 0 sec");
       resetTimer();
       return;
     } else if (second === 0 && minute > 0) {
-      console.log("min dec ");
       minute--;
       counter--;
       second = 59;
@@ -68,7 +61,6 @@ const Pomodoro = () => {
         counter,
       }));
     } else if (second > 0) {
-      console.log("sec dec");
       second--;
       counter--;
       setState((prev) => ({

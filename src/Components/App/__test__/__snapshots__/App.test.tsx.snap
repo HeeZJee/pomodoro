@@ -6,11 +6,11 @@ exports[`snapshot App 1`] = `
   data-testid="App"
 >
   <div
-    class="sc-eCssSg gMrqqQ"
+    class="sc-eCssSg cJUENM"
     data-testid="pomodoro"
   >
     <div
-      class="sc-hKgILt bHHqfk"
+      class="sc-hKgILt fPrBYi"
       data-testid="timer"
     >
       <div
@@ -34,7 +34,7 @@ exports[`snapshot App 1`] = `
     "
               fill-opacity="0"
               stroke-width="8"
-              style="stroke: rgba(106, 89, 157, 0.3); stroke-linecap: round; stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 0px;"
+              style="stroke: rgba(106, 89, 157, 0.4); stroke-linecap: round; stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 0px;"
             />
             <path
               class="CircularProgressbar-path"
@@ -46,7 +46,7 @@ exports[`snapshot App 1`] = `
     "
               fill-opacity="0"
               stroke-width="8"
-              style="stroke: rgba(106, 89, 157, 1); stroke-linecap: round; transition: none; transition-duration: 60s; stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 11.561060965210448px;"
+              style="stroke: rgba(106, 89, 157, 1); stroke-linecap: round; transition: all; transition-duration: 1s; stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 0px;"
             />
           </svg>
           <div
@@ -63,7 +63,7 @@ exports[`snapshot App 1`] = `
               <span
                 data-testid="second"
               >
-                0
+                00
               </span>
             </p>
           </div>
@@ -75,7 +75,7 @@ exports[`snapshot App 1`] = `
       data-testid="buttons"
     >
       <button
-        class="sc-dlfnbm gcAlKd"
+        class="sc-dlfnbm dPCyTW"
         title="Play music"
       >
         <svg
@@ -120,7 +120,7 @@ exports[`snapshot App 1`] = `
         </span>
       </button>
       <button
-        class="sc-dlfnbm gcAlKd"
+        class="sc-dlfnbm dPCyTW"
         title="Reset pomodoro"
       >
         <svg
