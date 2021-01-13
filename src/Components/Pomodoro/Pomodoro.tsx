@@ -24,7 +24,7 @@ const Pomodoro = () => {
   const [timerInterval, setTimerInterval] = useState<any>();
   const { isOn } = state;
   const [playing, toggle] = useAudio(
-    "http://www.noiseaddicts.com/samples_1w72b820/1450.mp3"
+    "http://www.noiseaddicts.com/samples_1w72b820/1453.mp3"
   );
 
   const startTimer = () => {
