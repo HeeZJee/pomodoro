@@ -2,13 +2,14 @@
 const cacheName = "cache-v1";
 
 const cachePath = [
+  "/index.html",
   "/",
+  `${location.href}`,
   "/manifest.json",
   "/favicon.ico",
   "/logo192.png",
   "/sw.js",
   "/logo512.png",
-  "/index.html",
   "https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXg.woff2",
   "https://fonts.googleapis.com/css?family=Lato&display=swap",
   "/static/js/bundle.js",
@@ -22,7 +23,7 @@ const cachePath = [
   "/static/css/**",
   "/main.43318790f93790fc0464.hot-update.js",
   "/sockjs-node",
-  // " http://www.noiseaddicts.com/samples_1w72b820/1453.mp3",
+  " http://www.noiseaddicts.com/samples_1w72b820/1453.mp3",
 ];
 
 self.addEventListener("register", () => console.log("registered sw.js"));
@@ -40,11 +41,44 @@ self.addEventListener("install", (e) => {
 });
 
 self.addEventListener("fetch", (e) => {
+  // e.respondWith(
+  //   fetch(e.request).catch(() =>
+  //     caches.open(cacheName).then((cache) => cache.match(e.request))
+  //   )
+  // );
+
   e.respondWith(
-    fetch(e.request).catch(() =>
-      caches.open(cacheName).then((cache) => cache.match(e.request))
-    )
+    caches.match(e.request).then((resp) => {
+      return (
+        resp ||
+        fetch(e.request, {
+          mode: "no-cors",
+          method: "get",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: null,
+        }).then((response) => {
+          return caches.open(cacheName).then((cache) => {
+            console.log("fetching", cache);
+            cache.put(e.request, response.clone());
+            return response;
+          });
+        })
+      );
+    })
   );
+
+  // e.respondWith(
+  //   caches
+  //     .match(e.request)
+  //     .then((cacheRes) => {
+  //       cacheRes || fetch(e.request);
+  //       console.log(("cacheRes", cacheRes) || ("fetchRes", fetch(e.request)));
+  //       return cacheRes || fetch(e.request);
+  //     })
+  //     .catch((e) => console.warn("Service Worker Fetch Error", e))
+  // );
 });
 
 // self.addEventListener("notificationclick", (e) => {
